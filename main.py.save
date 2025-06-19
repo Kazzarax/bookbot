@@ -1,0 +1,25 @@
+from stats import get_characters
+from stats import get_num_words
+from stats import sorter
+
+bookFile = "books/frankenstein.txt"
+
+def get_book_text(filePath):
+	with open(filePath) as f:
+		file_content = f.read()
+		return file_content
+
+def generate_report():
+	print(f"============ BOOKBOT ============\nAnalyzing book found at {bookFile}...")
+	print("----------- Word Count ----------")
+	print(f"	get_num_words((get_book_text('books/frankenstein.txt')))
+	print("--------- Character Count -------")
+	for k,v in sorter(get_characters((get_book_text('books/frankenstein.txt')))).items():
+		print(str(k) +":"+str(v))
+	print("============= END ===============")
+
+def main():
+	generate_report()
+
+if __name__ == "__main__":
+    main()
